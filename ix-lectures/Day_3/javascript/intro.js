@@ -71,8 +71,91 @@ console.log('Check for property', person.hasOwnProperty('name'));
 
 // Output sheep counter
 
-// remember index starts at 0 ie: we must add 1 to the index
+// Remember index starts at 0 ie: we must add 1 to the index
 // You can also go from 1 to 6 (There are a few ways to do this)
+
+console.log('For Loop');
 for (let i = 0; i < 5; i++) {
   console.log('Sheep Number ' + (i + 1));
+}
+
+console.log('While Loop');
+let num = 1;
+while (num < 6) {
+  console.log('Sheep Number ' + num);
+  num += 1;
+}
+
+console.log('Do While Loop');
+var i = 1;
+do {
+  console.log('Sheep Number ' + i);
+  i++;
+} while (i < 6);
+
+// Functions
+
+// A block of code wrtten for a specific task
+// Call your function to execute it
+// Can take in parameters
+// Can also return data
+// Makes code reusable
+console.log('Functions');
+
+function concat(str1, str2) {
+  return str1 + str2;
+}
+console.log(concat('Hello ', 'World'));
+
+console.log('Arrays and Anonymous Functions');
+// Don't be confused by anonymous function
+// It is just this thing () => {}
+
+const myArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+console.log(myArr);
+const filteredArr = myArr.filter((num) => {
+  // console.log(num);
+  // Check if even or not (if even modulo returns 0)
+  // console.log(num % 2);
+  return num % 2 == 0;
+});
+console.log(filteredArr);
+
+var now = new Date();
+console.log('Todays Date: ', now);
+
+function printDate() {
+  let now = new Date();
+  day = now.getDay();
+  console.log(now.getUTCDate());
+  // getDay gives the day of the week ie: 3 = Wednesday
+  month = now.getMonth();
+  // getMonth gives the month but index starts at 0
+  year = now.getFullYear();
+  console.log('Day: ', day);
+  console.log('Month: ', month);
+  console.log('Year: ', year);
+  console.log(year + '/' + month + '/' + day);
+  console.log('Full Date: ', now);
+
+  // Notice the day and month return differently because of how JS works with dates
+  // To get todays date exactly we have to convert from the response
+
+  console.log(now.getUTCDate() + '/' + (month + 1) + '/' + year);
+}
+
+printDate();
+
+function isPerfectSquare(val) {
+  return Math.sqrt(val) % 1 == 0;
+}
+
+console.log(isPerfectSquare(1));
+console.log(isPerfectSquare(2));
+console.log(isPerfectSquare(3));
+console.log(isPerfectSquare(4));
+
+for (let i = 0; i < 100; i++) {
+  console.log(i);
+  console.log(isPerfectSquare(i));
 }
