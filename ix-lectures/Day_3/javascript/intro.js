@@ -108,8 +108,6 @@ function concat(str1, str2) {
 console.log(concat('Hello ', 'World'));
 
 console.log('Arrays and Anonymous Functions');
-// Don't be confused by anonymous function
-// It is just this thing () => {}
 
 const myArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 console.log(myArr);
