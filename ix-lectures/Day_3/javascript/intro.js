@@ -44,3 +44,35 @@ number = parseInt(8.2);
 console.log('Number is: ', number);
 number = parseFloat(8.2);
 console.log('Number is: ', number);
+
+// Objects
+// A collection of properties or collection of primitive types
+// made up of values and variables
+
+let person = {
+  name: 'Sam',
+  age: 25,
+  country: 'Portugal',
+};
+
+// Notice how the Object looks in the cosole
+console.log('Person: ', person);
+console.log(person.name);
+console.log(person.age);
+console.log(person.country);
+
+person.name = 'Cameron';
+person.age = 28;
+person.country = 'South Africa';
+console.log('Person:', person);
+
+// Check if the person Object has the 'name' property
+console.log('Check for property', person.hasOwnProperty('name'));
+
+// Output sheep counter
+
+// remember index starts at 0 ie: we must add 1 to the index
+// You can also go from 1 to 6 (There are a few ways to do this)
+for (let i = 0; i < 5; i++) {
+  console.log('Sheep Number ' + (i + 1));
+}
