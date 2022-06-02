@@ -15,4 +15,4 @@ Day 3
 Day 4 
  - The DOM 
  - Interest Calculator
- - NNUmber Guesser
+ - Number Guesser
