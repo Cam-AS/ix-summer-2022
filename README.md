@@ -11,3 +11,8 @@ Day 2
 
 Day 3
  - Introduction to JavaScript
+
+Day 4 
+ - The DOM 
+ - Interest Calculator
+ - NNUmber Guesser
