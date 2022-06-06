@@ -8,6 +8,10 @@ export default function TaskList(props) {
     setCount(count + 1);
   }
 
+  function decrement() {
+    setCount(count - 1);
+  }
+
   return (
     <div className="mt-5 mx-5 p-2 task-list">
       <div className={props.name === 'Jacques' ? 'green' : 'blue'}>Name: {props.name}</div>
@@ -19,7 +23,10 @@ export default function TaskList(props) {
 
       <div className="text-center">
         <div>{count}</div>
-        <button className="btn btn-secondary mt-3" onClick={increment}>
+        <button className="btn btn-danger mt-3 me-1" onClick={decrement}>
+          Decrement
+        </button>
+        <button className="btn btn-secondary mt-3 ms-1" onClick={increment}>
           Increment
         </button>
       </div>
