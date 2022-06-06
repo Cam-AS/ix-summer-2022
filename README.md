@@ -16,3 +16,10 @@ Day 4
  - The DOM 
  - Interest Calculator
  - Number Guesser
+
+Day 5
+ - OOP (Object Oriented Programming)
+ - Library Example
+
+Day 6 
+ - Intro to React
