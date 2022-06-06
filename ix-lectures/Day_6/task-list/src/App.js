@@ -7,7 +7,7 @@ export default function App() {
   }
 
   return (
-    <div className="mt-5">
+    <div className="my-5">
       <button className="btn btn-primary ms-5" onClick={sayHello}>
         Hello
       </button>

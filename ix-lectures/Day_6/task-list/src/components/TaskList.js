@@ -18,8 +18,11 @@ export default function TaskList(props) {
       <div className="blue">Title: {props.title}</div>
 
       <p className="text-center pt-3">
-        Note: Each Component holds it's own State so when you increment the values are different1
+        Note: Each Component holds it's own State so when you increment or decrement the value React
+        knows which Components state to update and change
       </p>
+
+      <p className="text-center pt-3">Wow! What a time to be alive</p>
 
       <div className="text-center">
         <div>{count}</div>
@@ -30,6 +33,8 @@ export default function TaskList(props) {
           Increment
         </button>
       </div>
+
+      <p className="text-center pt-3">Hold on to your keyboards!</p>
     </div>
   );
 }
