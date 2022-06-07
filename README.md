@@ -23,3 +23,6 @@ Day 5
 
 Day 6 
  - Intro to React
+
+Day 7
+ - Task List Example
