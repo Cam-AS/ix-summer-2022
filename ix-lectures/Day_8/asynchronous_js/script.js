@@ -91,14 +91,34 @@ start();
 
 const url = 'https://jsonplaceholder.typicode.com/posts';
 
-const fetchDataPromise = fetch(url, {
-  method: 'GET',
-  headers: { 'Content-Type': 'application/json' },
-}).then((res) => res.json());
+// const fetchDataPromise = fetch(url, {
+//   method: 'GET',
+//   headers: { 'Content-Type': 'application/json' },
+// }).then((res) => res.json());
 
-async function init() {
-  // fetch return a Promise we need a .then to resolve the Promise
-  await fetchDataPromise.then((values) => console.log(values));
+// async function init() {
+//   // fetch return a Promise we need a .then to resolve the Promise
+//   await fetchDataPromise.then((values) => console.log(values));
+// }
+
+// init();
+
+async function fetchData() {
+  try {
+    const res = await fetch(url, {
+      method: 'GET',
+      headers: { 'Content-Type': 'application/json' },
+    });
+
+    // Without the await the Promise on the res is still pending
+    // const data = res.json();
+    const data = await res.json();
+
+    console.log(data);
+    console.log('Fetch GET request Success!');
+  } catch (err) {
+    console.log(err);
+  }
 }
 
-init();
+fetchData();
