@@ -71,6 +71,18 @@ function saveContact(contact) {
 //   getPhoneNumbers();
 // }
 
+async function start() {
+  try {
+    await saveContact({ name: 'Cam', number: '08366585' });
+    getPhoneNumbers();
+    console.log('Contact Added!');
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+start();
+
 // init();
 
 // Fetch API (Built in HTTP methods)
