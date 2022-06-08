@@ -2,9 +2,6 @@
 
 # dependencies
 /node_modules
-Day_6/demo/node_modules
-Day_7/task-list/node_modules
-meetings/library/node_modules
 /.pnp
 .pnp.js
 
