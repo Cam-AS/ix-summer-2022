@@ -26,3 +26,10 @@ Day 6
 
 Day 7
  - Task List Example
+
+Day 8
+ - Asynchronous JavaScript
+ - Callbacks
+ - Promises
+ - async await
+ - fetch API
