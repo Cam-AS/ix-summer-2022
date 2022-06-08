@@ -25,7 +25,7 @@ Day 6
  - Intro to React
 
 Day 7
- - Task List Example
+ - Task List Example (React)
 
 Day 8
  - Asynchronous JavaScript
@@ -33,3 +33,7 @@ Day 8
  - Promises
  - async await
  - fetch API
+
+
+Meetings: 
+ - Library Example (React)
