@@ -48,6 +48,8 @@ function saveContact(contact) {
     setTimeout(() => {
       phoneBook.push(contact);
 
+      // toggle err to see the resolve and reject cases
+      // const err = true;
       const err = false;
 
       if (!err) {
