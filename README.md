@@ -34,6 +34,9 @@ Day 8
  - async await
  - fetch API
 
+Day 9
+ - Task List CRUD (React & Firebase)
+
 
 Examples: 
  - Library (React)
