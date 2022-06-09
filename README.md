@@ -35,5 +35,5 @@ Day 8
  - fetch API
 
 
-Meetings: 
- - Library Example (React)
+Examples: 
+ - Library (React)
