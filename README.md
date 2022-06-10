@@ -39,4 +39,4 @@ Day 9
 
 
 Examples: 
- - Library (React)
+ - Library with React (Includes Routing and Authentication)
