@@ -14,8 +14,6 @@ import Login from './components/auth/Login';
 import Register from './components/auth/Register';
 import TaskPage from './components/tasks/TaskPage';
 
-import { Recipe } from './models/Recipe';
-
 export default function App() {
   const [user, setUser] = useState(null);
 
