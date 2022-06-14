@@ -37,6 +37,16 @@ Day 8
 Day 9
  - Task List CRUD (React & Firebase)
 
+Day 10 
+ - React Routing
+ - Authentication
+
+Day 11
+ - React Lifecycle
+ - Guarded Routes
+ - Spinners 
+ - Alerts
+
 
 Examples: 
  - Library with React (Includes Routing and Authentication)
