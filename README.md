@@ -47,6 +47,11 @@ Day 11
  - Spinners 
  - Alerts
 
+Day 12
+ - Database Relationships
+ - Design Patterns
+ - Updated Task List
+
 
 Examples: 
  - Library with React (Includes Routing and Authentication)
