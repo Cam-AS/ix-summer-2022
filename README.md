@@ -52,6 +52,8 @@ Day 12
  - Design Patterns
  - Updated Task List
 
+Day 13
+ - Firebase Storage Movie App
 
 Examples: 
  - Library with React (Includes Routing and Authentication)
