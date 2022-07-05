@@ -1,0 +1,20 @@
+.app-pdf-input {
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+
+  .pdf-holder {
+    width: 100%;
+    .pdf {
+      width: 100%;
+      // min-height: 500px;
+
+      // .react-pdf__Page__canvas {
+      //   width: 100% !important;
+      // }
+    }
+  }
+
+  input {
+    display: none;
+  }
+}
