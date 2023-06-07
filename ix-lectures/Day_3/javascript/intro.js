@@ -55,7 +55,7 @@ let person = {
   country: 'Portugal',
 };
 
-// Notice how the Object looks in the cosole
+// Notice how the Object looks in the console
 console.log('Person: ', person);
 console.log(person.name);
 console.log(person.age);

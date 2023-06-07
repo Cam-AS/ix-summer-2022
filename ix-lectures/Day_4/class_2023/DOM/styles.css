@@ -1,0 +1,14 @@
+.hide {
+  display: none;
+}
+
+.custom-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  border: 1px solid black;
+  padding: 50px;
+  background-color: yellow;
+  margin: 25px;
+}

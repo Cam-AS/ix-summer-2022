@@ -1,4 +1,3 @@
-
 class Book {
   constructor(title, author, isbn) {
     this.title = title;
@@ -7,11 +6,7 @@ class Book {
   }
 
   static fromJSON(json) {
-    return new Book(
-      json.title,
-      json.author,
-      json.isbn,
-    );
+    return new Book(json.title, json.author, json.isbn);
   }
 }
 
@@ -35,11 +30,7 @@ class UI {
   onFormSubmit(e) {
     e.preventDefault();
 
-    const book = new Book(
-      this.title.value,
-      this.author.value,
-      this.isbn.value,
-    );
+    const book = new Book(this.title.value, this.author.value, this.isbn.value);
 
     this.books.push(book);
 
@@ -58,14 +49,6 @@ class UI {
     }
   }
 
-  /*
-    <tr>
-      <td></td> // title
-      <td></td> // author
-      <td></td> // isbn 
-      <td></td> // actions
-    </tr>
-  */
   createBookTableRow(book) {
     const tr = document.createElement('tr');
 
@@ -93,7 +76,7 @@ class UI {
     const button = document.createElement('button');
 
     button.setAttribute('class', 'btn btn-danger btn-sm');
-    button.innerHTML = 'X'
+    button.innerHTML = 'X';
     button.addEventListener('click', () => this.onRemoveBookClicked(book));
 
     return button;
@@ -117,7 +100,7 @@ class UI {
     const json = localStorage.getItem('books');
     if (json) {
       const bookArr = JSON.parse(json);
-      this.books = bookArr.map(x => Book.fromJSON(x));
+      this.books = bookArr.map((x) => Book.fromJSON(x));
     }
   }
 }

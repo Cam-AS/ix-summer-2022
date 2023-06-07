@@ -5,6 +5,7 @@ function buttonClicked() {
 // Checking out the Document
 console.log(document);
 
+// Single element selector
 const table1 = document.getElementById('table1');
 
 console.log(table1);
