@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 
 import { auth } from '../../firebase/firebase';
-
 import Button from '../common/Button';
 import Alert from '../common/Alert';
 
@@ -21,7 +20,7 @@ export default function LoginPage() {
     try {
       const userCred = await signInWithEmailAndPassword(auth, email, password);
 
-      console.log(userCred);
+      // console.log(userCred);
       navigate('/');
     } catch (err) {
       setError(err.message);
@@ -59,6 +58,9 @@ export default function LoginPage() {
           </div>
 
           <div className="d-flex justify-content-end mt-4">
+            {/* <button type="submit" className="btn btn-primary px-5">
+              Login
+            </button> */}
             <Button type="submit" className="px-5" loading={loading}>
               Login
             </Button>

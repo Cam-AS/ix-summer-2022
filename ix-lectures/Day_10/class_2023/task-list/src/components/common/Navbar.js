@@ -1,12 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { signOut } from 'firebase/auth';
 
 import { auth } from '../../firebase/firebase';
 
+import Button from './Button';
+
 export default function Navbar(props) {
+  const [loading, setLoading] = useState(false);
+
   async function onLogoutClicked() {
+    setLoading(true);
     await signOut(auth);
+    setLoading(false);
   }
 
   return (
@@ -34,9 +40,12 @@ export default function Navbar(props) {
 
             {props.user ? (
               <li className="nav-item">
-                <div className="btn btn-primary" onClick={onLogoutClicked}>
+                {/* <div className="btn btn-primary" onClick={onLogoutClicked}>
                   Logout
-                </div>
+                </div> */}
+                <Button loading={loading} onClick={onLogoutClicked}>
+                  Logout
+                </Button>
               </li>
             ) : (
               <>
