@@ -1,4 +1,5 @@
-import React from 'react';
+import React from 'react'
+
 import Spinner from './Spinner';
 
 export default function Button({
@@ -12,7 +13,6 @@ export default function Button({
 }) {
   return (
     <button
-      // If you want to pass through any other unnamed attributes that may exist on teh componentÍ
       {...rest}
       style={{ position: 'relative' }}
       onClick={onClick}
@@ -21,19 +21,16 @@ export default function Button({
     >
       {children}
 
-      {loading ? (
-        <div
-          style={{
-            position: 'absolute',
-            right: '2px',
-            top: '2px',
-          }}
-        >
+      {loading ?
+        <div style={{
+          position: 'absolute',
+          right: '2px',
+          top: '2px',
+        }}>
           <Spinner />
         </div>
-      ) : (
-        <></>
-      )}
+        : <></>
+      }
     </button>
-  );
+  )
 }

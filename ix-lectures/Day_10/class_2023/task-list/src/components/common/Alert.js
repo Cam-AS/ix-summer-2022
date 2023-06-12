@@ -4,15 +4,16 @@ export default function Alert({
   show,
   onHide,
   className,
+  // React prop
   children,
   variant = 'danger',
+  // ...others contains all the other props besides the above
   ...others
 }) {
   return (
     <>
       {show ? (
         <div
-          {...others}
           className={
             'alert d-flex justify-content-between alert-' +
             variant +

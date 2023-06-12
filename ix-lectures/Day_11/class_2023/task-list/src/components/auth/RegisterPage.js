@@ -1,50 +1,54 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { signInWithEmailAndPassword } from 'firebase/auth';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
 
 import { auth } from '../../firebase/firebase';
-import Button from '../common/Button';
-import Alert from '../common/Alert';
 
-export default function LoginPage() {
+import Button from '../common/Button';
+
+export default function RegisterPage() {
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState('');
 
   async function onFormSubmit(e) {
     e.preventDefault();
 
     setLoading(true);
     try {
-      const userCred = await signInWithEmailAndPassword(auth, email, password);
+      const userCred = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password,
+      );
 
-      // console.log(userCred);
+      console.log(userCred);
       navigate('/');
     } catch (err) {
-      setError(err.message);
-      // alert(err.message);
+      alert(err.message);
     }
     setLoading(false);
   }
 
   return (
-    <div className="container my-4">
-      <div className="card card-body">
-        <h1>Login</h1>
+    <div className='container my-4'>
 
-        <p>Please enter your email and password to login</p>
+      <div className='card card-body'>
+
+        <h1>Register</h1>
+
+        <p>Please enter your email and password to register</p>
 
         <form onSubmit={onFormSubmit}>
+
           <div className="mb-3">
             <label className="form-label">Email address</label>
             <input
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               type="email"
-              className="form-control"
-            />
+              className="form-control" />
           </div>
 
           <div className="mb-3">
@@ -53,24 +57,17 @@ export default function LoginPage() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               type="password"
-              className="form-control"
-            />
+              className="form-control" />
           </div>
 
-          <div className="d-flex justify-content-end mt-4">
-            {/* <button type="submit" className="btn btn-primary px-5">
-              Login
-            </button> */}
-            <Button type="submit" className="px-5" loading={loading}>
-              Login
+          <div className='d-flex justify-content-end mt-4'>
+            <Button type='submit' className='px-5' loading={loading}>
+              Register
             </Button>
           </div>
         </form>
-
-        <Alert show={error} onHide={() => setError('')} className="mt-4">
-          {error}
-        </Alert>
       </div>
+
     </div>
-  );
+  )
 }
