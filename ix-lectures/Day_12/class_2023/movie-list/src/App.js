@@ -1,9 +1,11 @@
-import React from 'react';
+import './App.css';
+
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import 'bootstrap/dist/css/bootstrap.css';
 import MoviesPage from './components/MoviesPage';
 import AddMoviePage from './components/AddMoviePage';
+
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 // unlock storage on Firebase
 
@@ -35,13 +37,15 @@ import AddMoviePage from './components/AddMoviePage';
 // update Movie service
 // update our AddMoviesPage
 
-export default function App() {
+function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="" element={<MoviesPage />} />
-        <Route path="/add-movie" element={<AddMoviePage />} />
+        <Route path="/" element={<MoviesPage />}></Route>
+        <Route path="/add-movie" element={<AddMoviePage />}></Route>
       </Routes>
     </BrowserRouter>
   );
 }
+
+export default App;

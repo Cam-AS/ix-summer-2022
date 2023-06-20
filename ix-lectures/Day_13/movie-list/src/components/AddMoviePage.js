@@ -7,7 +7,6 @@ import FileService from '../services/file.service';
 import { Movie } from '../models/movie';
 
 export default function AddMoviePage() {
-
   const navigate = useNavigate();
 
   const [name, setName] = useState('');
@@ -23,17 +22,18 @@ export default function AddMoviePage() {
       });
 
       // save the movie to firebase
-      await MoviesService.createMovie(new Movie({
-        id: null,
-        name: name,
-        downloadUrl: downloadUrl,
-      }));
+      await MoviesService.createMovie(
+        new Movie({
+          id: null,
+          name: name,
+          downloadUrl: downloadUrl,
+        })
+      );
 
       navigate('/');
     } catch (err) {
       // setError(err.message);
     }
-
   }
 
   function onFileSelected(e) {
@@ -45,17 +45,13 @@ export default function AddMoviePage() {
   }
 
   return (
-    <div className='container my-4'>
-      <div className='card card-body'>
-
+    <div className="container my-4">
+      <div className="card card-body">
         <h1>Add Movie</h1>
 
         <form onSubmit={onFormSubmit}>
-
           <div className="mb-3">
-            <label className="form-label">
-              Movie Cover Image
-            </label>
+            <label className="form-label">Movie Cover Image</label>
             <input
               onChange={onFileSelected}
               type="file"
@@ -65,9 +61,7 @@ export default function AddMoviePage() {
           </div>
 
           <div className="mb-3">
-            <label className="form-label">
-              Movie Name
-            </label>
+            <label className="form-label">Movie Name</label>
             <input
               value={name}
               onChange={(e) => setName(e.target.value)}
@@ -76,13 +70,10 @@ export default function AddMoviePage() {
             />
           </div>
 
-          <div className='text-center'>
-            <button className='btn btn-primary px-5'>
-              Add Movie
-            </button>
+          <div className="text-center">
+            <button className="btn btn-primary px-5">Add Movie</button>
           </div>
         </form>
-
       </div>
     </div>
   );

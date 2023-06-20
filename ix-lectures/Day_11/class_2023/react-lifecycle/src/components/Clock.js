@@ -19,6 +19,7 @@ export default function Clock() {
     // Same as componentWillUnmount
     return () => {
       console.log('componentWillUnmount');
+      // Use clearInterval to stop the time when componentWillUnmount
       clearInterval(id);
     };
   }, []);

@@ -11,11 +11,15 @@ function App() {
   const [appCount, setAppCount] = useState(0);
 
   return (
+    // Helps us avoid double updates, strange effects, double animations etc
     <div className="container mt-5">
       <h1 className="text-center">React Lifecycle</h1>
       <ul>
         <li>componentWillMount - Immediately before initial rendering</li>
-        <li>componentDidMount - Immediately after initial rendering</li>
+        <li>
+          <strong>componentDidMount</strong> - Immediately after initial
+          rendering
+        </li>
         <li>componentWillReceiveProps - When component receives new props</li>
         <li>
           shouldComponentUpdate, return false to prevent rerendering - Before
@@ -26,24 +30,23 @@ function App() {
           state
         </li>
         <li>
-          componentDidUpdate - After component's updates are flushed to the DOM
+          <strong>componentDidUpdate</strong> - After component's updates are
+          flushed to the DOM
         </li>
         <li>
-          componentWillUnmount - Immediately before removing component from DOM
+          <strong>componentWillUnmount</strong> - Immediately before removing
+          component from DOM
         </li>
       </ul>
 
       {/* <Clock></Clock> */}
-
       {showCounter ? <Counter appCount={appCount} /> : <></>}
-
       <button
         className="btn btn-primary me-1"
         onClick={() => setShowCounter(!showCounter)}
       >
         Toggle show Counter
       </button>
-
       <button
         className="btn btn-primary ms-1"
         onClick={() => setAppCount(appCount + 1)}
