@@ -10,7 +10,7 @@ export default function Navbar(props) {
   }
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+    <nav className="navbar navbar-expand-lg bg-light">
       <div className="container-fluid">
         <div className="navbar-brand">iX Chat</div>
         <button
@@ -22,7 +22,7 @@ export default function Navbar(props) {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span className="navbar-toggler-icon"></span>
+          <i className="bi bi-list"></i>
         </button>
         <div
           className="collapse navbar-collapse d-flex justify-content-end"
@@ -31,20 +31,20 @@ export default function Navbar(props) {
           <ul className="navbar-nav mb-2 mb-lg-0">
             {props.user ? (
               <li className="nav-item">
-                <button onClick={onLogoutClicked} className="btn btn-primary">
+                <div className="btn btn-primary" onClick={onLogoutClicked}>
                   Logout
-                </button>
+                </div>
               </li>
             ) : (
               <>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/login">
-                    Login
+                  <Link className="nav-link" to="/register">
+                    Register
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/register">
-                    Register
+                  <Link className="nav-link" to="/login">
+                    Login
                   </Link>
                 </li>
               </>

@@ -1,10 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-} from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import { onAuthStateChanged } from 'firebase/auth';
 
@@ -19,14 +15,13 @@ import './App.css';
 
 // import page components
 import ChatsPage from './components/chats/ChatsPage';
+import RequireAuth from './components/common/RequireAuth';
 import RegisterPage from './components/auth/RegisterPage';
 import LoginPage from './components/auth/LoginPage';
 import Navbar from './components/common/Navbar';
-import RequireAuth from './components/common/RequireAuth';
 import Spinner from './components/common/Spinner';
 
 export default function App() {
-
   const [user, setUser] = useState(null);
   const [isUserSet, setIsUserSet] = useState(false);
 
@@ -42,24 +37,25 @@ export default function App() {
   return (
     <BrowserRouter>
       <Navbar user={user} />
-      {
-        isUserSet ?
-          <Routes>
-            <Route path="/" element={
+      {isUserSet ? (
+        <Routes>
+          <Route
+            path="/"
+            element={
               <RequireAuth user={user}>
                 <ChatsPage user={user} />
               </RequireAuth>
-            } />
+            }
+          />
 
-            <Route path="/register" element={<RegisterPage />} />
-            <Route path="/login" element={<LoginPage />} />
-          </Routes>
-          :
-          <div className='text-center m-4'>
-            <Spinner />
-          </div>
-      }
-
+          <Route path="/register" element={<RegisterPage />} />
+          <Route path="/login" element={<LoginPage />} />
+        </Routes>
+      ) : (
+        <div className="text-center m-4">
+          <Spinner />
+        </div>
+      )}
     </BrowserRouter>
-  )
+  );
 }
